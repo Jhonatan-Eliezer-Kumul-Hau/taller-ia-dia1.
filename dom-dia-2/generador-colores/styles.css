@@ -1,0 +1,228 @@
+/* Variables CSS para colores y espaciado */
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #ec4899;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título principal */
+h1 {
+    color: var(--text-color);
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Div grande que muestra el color */
+.color-display {
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 3px solid #e5e7eb;
+}
+
+/* Párrafo con el código hexadecimal */
+.color-code {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    margin: 20px 0;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+/* Grupo de botones */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilos generales de botones */
+.btn {
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    flex: 1;
+    min-width: 150px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón generar color */
+.btn-generate {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+}
+
+.btn-generate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.btn-generate:active {
+    transform: translateY(-1px);
+}
+
+/* Botón copiar */
+.btn-copy {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #db2777 100%);
+    color: white;
+}
+
+.btn-copy:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+}
+
+.btn-copy:active {
+    transform: translateY(-1px);
+}
+
+/* Mensaje de confirmación */
+.copy-message {
+    height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #10b981;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 10px;
+}
+
+.copy-message.show {
+    opacity: 1;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+/* Animación del mensaje */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    20%, 80% {
+        opacity: 1;
+    }
+}
+
+/* Responsive para tablets */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .color-display {
+        height: 250px;
+        margin: 20px 0;
+    }
+
+    .color-code {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-width: 120px;
+    }
+
+    .button-group {
+        gap: 10px;
+    }
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 400px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .color-display {
+        height: 200px;
+        margin: 15px 0;
+    }
+
+    .color-code {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 13px;
+        flex: 1;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital Interactivo con Alarma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <!-- Saludo según la hora del día -->
+        <div class="saludo" id="saludo">Buenos días</div>
+
+        <!-- Display del reloj digital -->
+        <div class="reloj-container">
+            <div class="reloj" id="reloj">00:00:00</div>
+            <div class="formato-toggle">
+                <button id="toggleFormato" class="btn-formato">24h</button>
+            </div>
+        </div>
+
+        <!-- Display de la fecha -->
+        <div class="fecha" id="fecha">Lunes, 01 de Enero de 2024</div>
+
+        <!-- Sección de configuración de alarma -->
+        <div class="seccion-alarma">
+            <h2>⏰ Configurar Alarma</h2>
+            
+            <div class="grupo-input">
+                <label for="horaAlarma">Hora de Alarma:</label>
+                <input 
+                    type="time" 
+                    id="horaAlarma" 
+                    class="input-hora"
+                    min="00:00"
+                    max="23:59"
+                    value="07:00"
+                >
+            </div>
+
+            <div class="grupo-botones">
+                <button id="btnEstablecerAlarma" class="btn btn-establecer">
+                    Establecer Alarma
+                </button>
+                <button id="btnCancelarAlarma" class="btn btn-cancelar" disabled>
+                    Cancelar Alarma
+                </button>
+            </div>
+
+            <!-- Indicador de alarma activa -->
+            <div class="indicador-alarma" id="indicadorAlarma">
+                <span id="estadoAlarma" class="estado-inactivo">Alarma Inactiva</span>
+                <span id="textoHoraAlarma" class="hora-alarma"></span>
+            </div>
+        </div>
+
+        <!-- Área de notificación para la alarma -->
+        <div class="notificacion-alarma" id="notificacionAlarma">
+            <div class="contenido-notificacion">
+                <h3>¡¡¡ ALARMA ACTIVADA !!!</h3>
+                <p id="textoNotificacion">Es hora de tu alarma</p>
+                <button id="btnAceptarAlarma" class="btn btn-aceptar">Aceptar</button>
+            </div>
+        </div>
+
+        <!-- Indicador visual de alarma activa en pantalla -->
+        <div class="alarma-activa-indicador" id="indicadorActivoVisual">
+            <span>🔔 ALARMA ACTIVA</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

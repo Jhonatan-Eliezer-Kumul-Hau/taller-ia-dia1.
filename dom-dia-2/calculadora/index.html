@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calculadora - Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="calc" aria-label="Calculadora">
+    <header class="display">
+      <div id="display-expression" class="expression" aria-hidden="false">0</div>
+      <div id="display-result" class="result" aria-live="polite">0</div>
+    </header>
+
+    <section class="buttons" role="group" aria-label="Teclado de la calculadora">
+      <button class="btn control" data-value="C" aria-label="Limpiar">C</button>
+      <button class="btn control" data-value="BS" aria-label="Borrar">⌫</button>
+      <button class="btn control" data-value="(" aria-label="Paréntesis apertura">(</button>
+      <button class="btn control" data-value=")" aria-label="Paréntesis cierre">)</button>
+
+      <button class="btn" data-value="7">7</button>
+      <button class="btn" data-value="8">8</button>
+      <button class="btn" data-value="9">9</button>
+      <button class="btn op" data-value="/">÷</button>
+
+      <button class="btn" data-value="4">4</button>
+      <button class="btn" data-value="5">5</button>
+      <button class="btn" data-value="6">6</button>
+      <button class="btn op" data-value="*">×</button>
+
+      <button class="btn" data-value="1">1</button>
+      <button class="btn" data-value="2">2</button>
+      <button class="btn" data-value="3">3</button>
+      <button class="btn op" data-value="-">−</button>
+
+      <button class="btn" data-value="0">0</button>
+      <button class="btn" data-value=".">.</button>
+      <button class="btn" data-value="±" aria-label="Cambiar signo">±</button>
+      <button class="btn op" data-value="+">+</button>
+
+      <button class="btn equal wide" data-value="=">=</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

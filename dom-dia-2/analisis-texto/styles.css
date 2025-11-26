@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+   ========================================== */
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* ==========================================
+   ENCABEZADO
+   ========================================== */
+
+.encabezado {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.encabezado h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ==========================================
+   SECCIÓN EDITOR
+   ========================================== */
+
+.seccion-editor {
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.grupo-textarea {
+    margin-bottom: 20px;
+}
+
+.label-textarea {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.textarea-principal {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+    transition: all 0.3s ease;
+    background-color: white;
+    color: #333;
+}
+
+.textarea-principal:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background-color: #fafbff;
+}
+
+.textarea-principal::placeholder {
+    color: #adb5bd;
+}
+
+/* Estilos para el navegador Firefox */
+.textarea-principal::-moz-selection {
+    background-color: rgba(102, 126, 234, 0.2);
+}
+
+/* Estilos para navegadores Chrome/Safari */
+.textarea-principal::selection {
+    background-color: rgba(102, 126, 234, 0.2);
+}
+
+.contador-caracteres-visual {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.contador {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contador:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* ==========================================
+   SECCIÓN ESTADÍSTICAS
+   ========================================== */
+
+.seccion-estadisticas {
+    padding: 40px;
+    background-color: white;
+}
+
+.seccion-estadisticas h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Grid de estadísticas - Responsive */
+.grid-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   TARJETAS DE ESTADÍSTICAS
+   ========================================== */
+
+.tarjeta-estadistica {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 140px;
+}
+
+.tarjeta-estadistica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.icono-tarjeta {
+    font-size: 2.5rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.contenido-tarjeta {
+    flex: 1;
+}
+
+.titulo-estadistica {
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.valor-estadistica {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    animation: pulso 0.3s ease;
+}
+
+@keyframes pulso {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.etiqueta-estadistica {
+    font-size: 0.8rem;
+    color: #adb5bd;
+}
+
+/* ==========================================
+   COLORES DIFERENCIADOS PARA CADA MÉTRICA
+   ========================================== */
+
+.tarjeta-caracteres-totales {
+    border-left: 5px solid #3498db;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, transparent 100%);
+}
+
+.tarjeta-caracteres-totales .valor-estadistica {
+    color: #3498db;
+}
+
+.tarjeta-caracteres-sin-espacios {
+    border-left: 5px solid #e74c3c;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.05) 0%, transparent 100%);
+}
+
+.tarjeta-caracteres-sin-espacios .valor-estadistica {
+    color: #e74c3c;
+}
+
+.tarjeta-palabras {
+    border-left: 5px solid #2ecc71;
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.05) 0%, transparent 100%);
+}
+
+.tarjeta-palabras .valor-estadistica {
+    color: #2ecc71;
+}
+
+.tarjeta-oraciones {
+    border-left: 5px solid #f39c12;
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.05) 0%, transparent 100%);
+}
+
+.tarjeta-oraciones .valor-estadistica {
+    color: #f39c12;
+}
+
+.tarjeta-tiempo-lectura {
+    border-left: 5px solid #9b59b6;
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.05) 0%, transparent 100%);
+}
+
+.tarjeta-tiempo-lectura .valor-estadistica {
+    color: #9b59b6;
+}
+
+.tarjeta-densidad {
+    border-left: 5px solid #1abc9c;
+    background: linear-gradient(135deg, rgba(26, 188, 156, 0.05) 0%, transparent 100%);
+}
+
+.tarjeta-densidad .valor-estadistica {
+    color: #1abc9c;
+}
+
+/* ==========================================
+   SECCIÓN DE BOTONES
+   ========================================== */
+
+.seccion-botones {
+    padding: 30px 40px;
+    background-color: #f8f9fa;
+    border-top: 2px solid #e9ecef;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilos generales de botones */
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Botón Copiar */
+.btn-copiar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-copiar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Botón Limpiar */
+.btn-limpiar {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-limpiar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+}
+
+/* ==========================================
+   MENSAJE DE CONFIRMACIÓN
+   ========================================== */
+
+.mensaje-confirmacion {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: bottom 0.3s ease;
+    z-index: 1000;
+}
+
+.mensaje-confirmacion.mostrar {
+    bottom: 20px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+    .encabezado {
+        padding: 30px 20px;
+    }
+
+    .encabezado h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+    }
+
+    .seccion-editor,
+    .seccion-estadisticas,
+    .seccion-botones {
+        padding: 25px 20px;
+    }
+
+    .textarea-principal {
+        height: 150px;
+        font-size: 0.95rem;
+    }
+
+    .grid-estadisticas {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .tarjeta-estadistica {
+        min-height: 120px;
+        padding: 20px;
+    }
+
+    .icono-tarjeta {
+        font-size: 2rem;
+    }
+
+    .valor-estadistica {
+        font-size: 1.8rem;
+    }
+
+    .seccion-botones {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-principal {
+        border-radius: 10px;
+    }
+
+    .encabezado h1 {
+        font-size: 1.5rem;
+    }
+
+    .seccion-editor,
+    .seccion-estadisticas,
+    .seccion-botones {
+        padding: 20px 15px;
+    }
+
+    .textarea-principal {
+        height: 120px;
+        padding: 15px;
+    }
+
+    .valor-estadistica {
+        font-size: 1.5rem;
+    }
+
+    .titulo-estadistica {
+        font-size: 0.75rem;
+    }
+
+    .etiqueta-estadistica {
+        font-size: 0.7rem;
+    }
+}

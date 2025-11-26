@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Texto - Análisis en Tiempo Real</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <!-- Encabezado -->
+        <header class="encabezado">
+            <h1>📝 Analizador de Texto</h1>
+            <p class="subtitulo">Análisis de estadísticas en tiempo real</p>
+        </header>
+
+        <!-- Sección de entrada de texto -->
+        <section class="seccion-editor">
+            <div class="grupo-textarea">
+                <label for="textInput" class="label-textarea">Escribe o pega tu texto aquí:</label>
+                <textarea
+                    id="textInput"
+                    class="textarea-principal"
+                    placeholder="Escribe tu texto aquí y observa las estadísticas en tiempo real..."
+                    spellcheck="true"
+                ></textarea>
+                <div class="contador-caracteres-visual">
+                    <span id="contadorVisual" class="contador">0 caracteres</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de estadísticas -->
+        <section class="seccion-estadisticas">
+            <h2>📊 Estadísticas del Texto</h2>
+            
+            <div class="grid-estadisticas">
+                <!-- Tarjeta 1: Caracteres con espacios -->
+                <div class="tarjeta-estadistica tarjeta-caracteres-totales">
+                    <div class="icono-tarjeta">📍</div>
+                    <div class="contenido-tarjeta">
+                        <h3 class="titulo-estadistica">Caracteres Totales</h3>
+                        <p class="valor-estadistica" id="caracteresTotales">0</p>
+                        <p class="etiqueta-estadistica">Incluyendo espacios</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Caracteres sin espacios -->
+                <div class="tarjeta-estadistica tarjeta-caracteres-sin-espacios">
+                    <div class="icono-tarjeta">✏️</div>
+                    <div class="contenido-tarjeta">
+                        <h3 class="titulo-estadistica">Caracteres Útiles</h3>
+                        <p class="valor-estadistica" id="caracteresSinEspacios">0</p>
+                        <p class="etiqueta-estadistica">Sin espacios</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Número de palabras -->
+                <div class="tarjeta-estadistica tarjeta-palabras">
+                    <div class="icono-tarjeta">🔤</div>
+                    <div class="contenido-tarjeta">
+                        <h3 class="titulo-estadistica">Palabras</h3>
+                        <p class="valor-estadistica" id="numeroPalabras">0</p>
+                        <p class="etiqueta-estadistica">Palabras totales</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4: Número de oraciones -->
+                <div class="tarjeta-estadistica tarjeta-oraciones">
+                    <div class="icono-tarjeta">⭐</div>
+                    <div class="contenido-tarjeta">
+                        <h3 class="titulo-estadistica">Oraciones</h3>
+                        <p class="valor-estadistica" id="numeroOraciones">0</p>
+                        <p class="etiqueta-estadistica">Oraciones totales</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5: Tiempo de lectura -->
+                <div class="tarjeta-estadistica tarjeta-tiempo-lectura">
+                    <div class="icono-tarjeta">⏱️</div>
+                    <div class="contenido-tarjeta">
+                        <h3 class="titulo-estadistica">Tiempo de Lectura</h3>
+                        <p class="valor-estadistica" id="tiempoLectura">0</p>
+                        <p class="etiqueta-estadistica">~200 palabras/min</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 6: Densidad léxica -->
+                <div class="tarjeta-estadistica tarjeta-densidad">
+                    <div class="icono-tarjeta">🎯</div>
+                    <div class="contenido-tarjeta">
+                        <h3 class="titulo-estadistica">Densidad Léxica</h3>
+                        <p class="valor-estadistica" id="densidadLeXica">0%</p>
+                        <p class="etiqueta-estadistica">Caracteres/Palabras</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de botones -->
+        <section class="seccion-botones">
+            <button id="btnCopiarEstadisticas" class="btn btn-copiar" title="Copiar estadísticas al portapapeles">
+                📋 Copiar Estadísticas
+            </button>
+            <button id="btnLimpiar" class="btn btn-limpiar" title="Limpiar texto y estadísticas">
+                🗑️ Limpiar Todo
+            </button>
+        </section>
+
+        <!-- Mensaje de confirmación -->
+        <div id="mensajeConfirmacion" class="mensaje-confirmacion">
+            ✓ Estadísticas copiadas al portapapeles
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
