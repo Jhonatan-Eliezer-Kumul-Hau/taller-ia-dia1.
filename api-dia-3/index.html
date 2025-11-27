@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Buscador de Pokémon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>POKÉDEX</h1>
+            <p>Busca tu Pokémon favorito</p>
+        </div>
+
+        <!-- Search Container -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input"
+                    placeholder="Ingresa el nombre o número del Pokémon..." autocomplete="off">
+                <button id="searchButton" class="search-button">Buscar</button>
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading">
+            <p>🔍 Buscando Pokémon...</p>
+        </div>
+
+        <!-- Pokemon Card -->
+        <div id="pokemonCard" class="pokemon-card">
+            <div class="pokemon-header">
+                <div class="pokemon-image-container">
+                    <img id="pokemonImage" class="pokemon-image" src="" alt="Pokemon">
+                </div>
+                <h2 id="pokemonName" class="pokemon-name"></h2>
+                <p id="pokemonId" class="pokemon-id"></p>
+                <div id="pokemonTypes" class="pokemon-types"></div>
+            </div>
+
+            <div class="pokemon-stats">
+                <h3>📊 Estadísticas</h3>
+                <div id="statsContainer"></div>
+            </div>
+
+            <div class="pokemon-info">
+                <div class="info-item">
+                    <div class="info-label">Altura</div>
+                    <div id="pokemonHeight" class="info-value"></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Peso</div>
+                    <div id="pokemonWeight" class="info-value"></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Experiencia Base</div>
+                    <div id="pokemonExperience" class="info-value"></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Habilidades</div>
+                    <div id="pokemonAbilities" class="info-value"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+</body>
+
+</html>
