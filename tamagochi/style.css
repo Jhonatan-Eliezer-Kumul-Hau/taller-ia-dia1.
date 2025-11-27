@@ -1,0 +1,261 @@
+/* Fuentes pixeladas/retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 8px solid #ffd6e8;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: #ff6b9d;
+    text-shadow: 3px 3px 0 #ffd6e8;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #9b59b6;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Pantalla del Tamagotchi */
+#container {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 6px solid #ff6b9d;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.screen {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 4px dashed #ffd6e8;
+}
+
+.pet-image {
+    margin-bottom: 15px;
+}
+
+.cat-emoji {
+    font-size: 5rem;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.pet-info h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    color: #ff6b9d;
+    margin-bottom: 10px;
+}
+
+.thought-bubble {
+    background: #ffd6e8;
+    padding: 12px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    color: #9b59b6;
+    font-weight: 600;
+    font-size: 0.9rem;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.thought-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffd6e8;
+}
+
+/* Barras de estado */
+.stats-container {
+    margin-bottom: 25px;
+}
+
+.stat-bar {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-bar label {
+    font-weight: 600;
+    color: #9b59b6;
+    min-width: 100px;
+    font-size: 0.9rem;
+}
+
+.bar-background {
+    flex: 1;
+    height: 25px;
+    background: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #e0e0e0;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bar-fill {
+    height: 100%;
+    transition: width 0.5s ease, background-color 0.3s ease;
+    border-radius: 12px;
+}
+
+.bar-fill.hunger {
+    background: linear-gradient(90deg, #ff6b6b, #ff8787);
+}
+
+.bar-fill.energy {
+    background: linear-gradient(90deg, #4ecdc4, #44a08d);
+}
+
+.bar-fill.happiness {
+    background: linear-gradient(90deg, #ffd93d, #ffb347);
+}
+
+.stat-bar span {
+    font-weight: 600;
+    color: #9b59b6;
+    min-width: 30px;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+/* Botones de acción */
+.actions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 15px;
+    padding: 15px 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    border: 4px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);
+}
+
+.btn-icon {
+    font-size: 1.8rem;
+}
+
+.action-btn.feed {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+.action-btn.feed:hover {
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.6);
+}
+
+.action-btn.sleep {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+.action-btn.sleep:hover {
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.6);
+}
+
+.action-btn.play {
+    background: linear-gradient(135deg, #ffd93d 0%, #ffb347 100%);
+    box-shadow: 0 5px 15px rgba(255, 217, 61, 0.4);
+}
+
+.action-btn.play:hover {
+    box-shadow: 0 8px 20px rgba(255, 217, 61, 0.6);
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .actions-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-emoji {
+        font-size: 4rem;
+    }
+
+    .stat-bar {
+        flex-wrap: wrap;
+    }
+
+    .stat-bar label {
+        min-width: 80px;
+        font-size: 0.85rem;
+    }
+}

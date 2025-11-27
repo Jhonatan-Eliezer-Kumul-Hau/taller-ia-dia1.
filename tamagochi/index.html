@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidando a Taco 🐱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <header>
+            <h1>🐱 Cuidando a Taco</h1>
+            <p class="subtitle">Tu mascota virtual</p>
+        </header>
+
+        <div id="container" class="tamagotchi-display">
+            <div class="screen">
+                <div class="pet-image">
+                    <span class="cat-emoji">🐱</span>
+                </div>
+                <div class="pet-info">
+                    <h2 id="pet-name">Taco</h2>
+                    <p id="pet-thought" class="thought-bubble">¡Hola! Soy Taco 😺</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-bar">
+                <label>🍖 Hambre</label>
+                <div class="bar-background">
+                    <div id="hunger-bar" class="bar-fill hunger" style="width: 50%"></div>
+                </div>
+                <span id="hunger-value">50</span>
+            </div>
+
+            <div class="stat-bar">
+                <label>⚡ Energía</label>
+                <div class="bar-background">
+                    <div id="energy-bar" class="bar-fill energy" style="width: 50%"></div>
+                </div>
+                <span id="energy-value">50</span>
+            </div>
+
+            <div class="stat-bar">
+                <label>💖 Felicidad</label>
+                <div class="bar-background">
+                    <div id="happiness-bar" class="bar-fill happiness" style="width: 50%"></div>
+                </div>
+                <span id="happiness-value">50</span>
+            </div>
+        </div>
+
+        <div class="actions-container">
+            <button id="feed-btn" class="action-btn feed">
+                <span class="btn-icon">🍖</span>
+                <span>Alimentar</span>
+            </button>
+            <button id="sleep-btn" class="action-btn sleep">
+                <span class="btn-icon">😴</span>
+                <span>Dormir</span>
+            </button>
+            <button id="play-btn" class="action-btn play">
+                <span class="btn-icon">🎾</span>
+                <span>Jugar</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+</body>
+
+</html>
